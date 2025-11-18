@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Planner PWA</title>
+    
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <h1>Life Planner Dashboard</h1>
+    </header>
+
+    <section id="quick-add-section" class="app-section">
+        <h2>⚡ Quick Add Event</h2>
+        <form id="quick-add-form">
+            <input type="text" id="quick-title" placeholder="Event Title (e.g., Gym, Call with Tom)" required>
+            <div class="form-row">
+                <select id="quick-type" required>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Hyrox Training">Hyrox Training</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <input type="date" id="quick-date" required>
+                <input type="time" id="quick-time" required>
+            </div>
+            <button type="submit" class="primary-button quick-add-btn">Add Now & Save</button>
+        </form>
+    </section>
+
+    <nav id="navigation">
+        <a href="#dashboard" class="active">Dashboard (Today)</a>
+        <a href="#calendar">Calendar</a>
+        <a href="#tasks">Tasks & Todos</a>
+        <a href="#hyrox-training">Hyrox Planner</a>
+    </nav>
+
+    <main id="app-content">
+        
+        <section id="dashboard" class="app-section">
+            <h2>Welcome Back!</h2>
+            <div id="dashboard-content">
+                </div>
+        </section>
+
+        <section id="calendar" class="app-section" style="display:none;"> 
+            <h2>Full Event Scheduler</h2>
+            
+            <form id="add-event-form">
+                <label for="event-title">Title</label>
+                <input type="text" id="event-title" required>
+
+                <label for="event-type">Category</label>
+                <select id="event-type" required>
+                    <option value="Personal">Personal</option>
+                    <option value="Work">Work</option>
+                    <option value="Hyrox Training">Hyrox Training</option>
+                </select>
+
+                <div class="form-row">
+                    <label for="event-date">Date</label>
+                    <input type="date" id="event-date" required>
+                </div>
+                
+                <div class="form-row">
+                    <label for="event-time">Time</label>
+                    <input type="time" id="event-time" required>
+                </div>
+
+                <button type="submit" class="primary-button">
+                    Save Block & Share Options
+                </button>
+            </form>
+
+            <hr>
+            
+            <div id="calendar-toggles">
+                <button class="calendar-btn active" data-view="day">Day</button>
+                <button class="calendar-btn" data-view="week">Week</button>
+                <button class="calendar-btn" data-view="month">Month</button>
+            </div>
+
+            <div id="calendar-view-container">
+                <div id="day-view" class="calendar-view">
+                    </div>
+                <div id="week-view" class="calendar-view" style="display:none;">
+                    </div>
+                <div id="month-view" class="calendar-view" style="display:none;">
+                    </div>
+            </div>
+
+        </section>
+
+        <section id="tasks" class="app-section" style="display:none;">
+            <h2>Tasks & Reminders</h2>
+            <ul id="task-list">
+                </ul>
+            <p>We will add the task input form here next!</p>
+        </section>
+
+        <section id="hyrox-training" class="app-section" style="display:none;">
+            <h2>Hyrox Training Planner</h2>
+            <p>Plan your training sessions and block out time!</p>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Life Planner PWA</p>
+    </footer>
+
+</body>
+</html>
